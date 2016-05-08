@@ -79,12 +79,12 @@ def regress(model, name):
 
 # test different regression models - still need to finetune
 regress(linear_model.LinearRegression(), 'Ordinary Least Squares Regression')
-regress(linear_model.Ridge(), 'Ridge Regression')
-regress(linear_model.Lasso(alpha = 0.0001), 'Lasso Regression')
-regress(linear_model.ElasticNet(alpha=.0006), 'Elastic Net Regression')
-regress(DecisionTreeRegressor(max_depth=10), 'Decision Tree Regression')
-regress(RandomForestRegressor(n_estimators = 100, max_depth = 5, warm_start = False), 'Random Forest Regression')
-regress(KNeighborsRegressor(), "KNN Regressor")
+# regress(linear_model.Ridge(), 'Ridge Regression')
+# regress(linear_model.Lasso(alpha = 0.0001), 'Lasso Regression')
+# regress(linear_model.ElasticNet(alpha=.0006), 'Elastic Net Regression')
+# regress(DecisionTreeRegressor(max_depth=10), 'Decision Tree Regression')
+# regress(RandomForestRegressor(n_estimators = 100, max_depth = 5, warm_start = False), 'Random Forest Regression')
+# regress(KNeighborsRegressor(), "KNN Regressor")
 # regress(SVR(C=10, kernel='linear'), 'Linear Support Vector Regression')... takes a long time
 
 # feature importance using random forest
