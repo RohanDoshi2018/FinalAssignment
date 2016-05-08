@@ -196,3 +196,38 @@ y_full.to_csv('y_full.csv', encoding='utf-8',index=False)
 y_full_z.to_csv('y_full_z.csv', encoding='utf-8',index=False)
 x_full.to_csv('x_full.csv', encoding='utf-8',index=False)
 x_full_z.to_csv('x_full_z.csv', encoding='utf-8',index=False)
+
+# creating a version that has institution names as indices
+data_all_names = pd.read_csv('old_data/data_full.csv', low_memory=False) # last copy of data with INSTNM
+data_all_names = data_all_names.drop('Unnamed: 0', axis=1)
+# iterating for corresponding institution names
+inst_names = []
+for i in range(len(data_still_needs_headers)):
+    find_id = data_still_needs_headers.ix[i,'UNITID']
+    for j in range(len(data_all_names)):
+        if data_all_names.ix[j,'UNITID']==find_id:
+            inst_names.append(data_all_names.ix[j,'INSTNM'])
+data_still_needs_headers.index = inst_names
+data_named = data_still_needs_headers
+data_named.to_csv('data_named.csv', encoding='utf-8')
+
+# normalize with z-score and replace UNITID column
+data_z_named = stats.zscore(data_named, axis=1)
+data_z_full_named = pd.DataFrame(data=data_z_named,columns=data_super_nans.columns)
+data_z_full_named.index = data_named.index
+data_z_full_named.ix[:,'UNITID'] = data_named.ix[:,'UNITID']
+
+# save full data file
+data_z_full_named.to_csv('data_z_full_final_named.csv', encoding='utf-8')
+
+# separate data into x and y again
+y_full_named = data_named.ix[:,'mn_earn_wne_p6']
+y_full_z_named = data_z_full_named.ix[:,'mn_earn_wne_p6']
+x_full_named = data_named.drop('mn_earn_wne_p6', axis=1)
+x_full_z_named = data_z_full_named.drop('mn_earn_wne_p6', axis=1)
+
+# save now named x and y origina/z-scored data
+y_full_named.to_csv('y_named.csv', encoding='utf-8')
+y_full_z_named.to_csv('y_named_z.csv', encoding='utf-8')
+x_full_named.to_csv('x_named.csv', encoding='utf-8')
+x_full_z_named.to_csv('x_named_z.csv', encoding='utf-8')
