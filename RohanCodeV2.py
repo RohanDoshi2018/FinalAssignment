@@ -76,8 +76,6 @@ def regress(model, name):
     plotPred(y_predict, y_test, name)
     plotResiduals(y_predict, y_test, name)
     listTenLargestResiduals(y_predict, y_test)
-    #### printing THE 10 LARGEST RESIDUALS
-
 
 # test different regression models - still need to finetune
 regress(linear_model.LinearRegression(), 'Ordinary Least Squares Regression')
