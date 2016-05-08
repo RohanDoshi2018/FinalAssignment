@@ -17,29 +17,16 @@ import sqlite3
 
 
 # read in data and labels
-pd.read_csv("data.csv", low_memory=False)
-labels = pd.read_cvs('lablels.csv') #### generate the labels and save..., isolate column from data and delete rows accordingly
-
-# filter out the bad schools (rows)
-data_filtered = []
-for i in range(0, len(data)):
-    if (data.ix[i, 'DISTANCEONLY'] == "Not distance-education only") and \
-        ((data.ix[i, 'HIGHDEG'] == "Graduate degree") or (data.ix[i, 5] == "Bachelor's degree")) and \
-        (data.ix[i, 'CURROPER'] == "Currently certified as operating"):
-        data_filtered.append(data.ix[i])
-data = pd.DataFrame(data_filtered, columns=data.columns.values)
-data.drop(['Unnamed: 0', 'DISTANCEONLY', 'HIGHDEG', 'CURROPER'], axis=1)
-
-# filter out more unecessary features (e.g. categorical features and string labels)
-data.drop(['Unnamed: 0', 'DISTANCEONLY', 'HIGHDEG', 'CURROPER'], axis=1) #### replace with correct features
+d = pd.read_csv("data.csv", low_memory=False)
+# labels = pd.read_cvs('lablels.csv') #### generate the labels and save..., isolate column from data and delete rows accordingly
 
 # normalize the data column(feature)-wise by using z-scores
-stats.zscore(data, axis=1)
+d = stats.zscore(d, axis=1)
 
 def plotPred(y_predict, y_test, name):
     plt.figure()
     plt.scatter(y_test, y_predict)
-    t = np.arange(0, 100000, 1)
+    t = np.arange(0, max(np.amax(y_predict),np.amax(y_test)), 1)
     plt.plot(t,t)
     plt.xlabel('Actual incomes')
     plt.ylabel('Predicted incomes')
@@ -68,6 +55,39 @@ def listTenLargestResiduals(y_predict, y_test)
 #### gridsearch hyperparameter optimization
 # evaluate with 3-fold finetuning 
 
+# # Hyperparameter optimization for LinearSVC using Grid Search Cross-Validation
+# C_range = [0.00001, 0.0001, 0.001, 0.01, 0.1, 1.0, 10.0, 100.0, 1000.0, 10000.0]
+# max_iter_range = [100, 500, 1000]
+# parameters = {"C":C_range, "max_iter":max_iter_range}
+# clf = GridSearchCV(lsvc, parameters)
+# clf.fit(data_final, labels)
+# print("The best classifier is: ", clf.best_estimator_)
+
+# # Hyperparameter optimization for SVC using Grid Search Cross-Validation
+# C_range = [0.00001, 0.0001, 0.001, 0.01, 0.1, 1.0, 10.0, 100.0, 1000.0, 10000.0]
+# parameters = {"C":C_range}
+# clf = GridSearchCV(svc, parameters)
+# clf.fit(data_final, labels)
+# print("The best classifier is: ", clf.best_estimator_)
+
+# # Hyperparameter optimization for KNN using Grid Search Cross-Validation
+# parameters = [{'weights': ['uniform', 'distance'], 'n_neighbors': [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100], 'leaf_size': [10,20,30,40,50,60,70,80,90,100]}]
+# clf = GridSearchCV(knn, parameters)
+# clf.fit(data_final, labels)
+# print("The best classifier is: ", clf.best_estimator_)
+
+# # Hyperparameter optimization for Decision Tree using Grid Search Cross-Validation
+# parameters = [{'max_features': ['auto', 'log2'], 'max_depth': [10,20,30,40,50,60,70,80,90,100]}]
+# clf = GridSearchCV(dt, parameters)
+# clf.fit(data_final, labels)
+# print("The best classifier is: ", clf.best_estimator_)
+
+# # Hyperparameter optimization for Random Forest using Grid Search Cross-Validation
+# parameters = [{"n_estimators": [5, 10, 20, 50]}]
+# clf = GridSearchCV(rf, parameters)
+# clf.fit(data_final, labels)
+# print("The best classifier is: ", clf.best_estimator_)
+
 # fit and test the regressor, output graph and evaluation statistics
 def regress(model, name):
     reg = model
@@ -80,8 +100,8 @@ def regress(model, name):
 # test different regression models - still need to finetune
 regress(linear_model.LinearRegression(), 'Ordinary Least Squares Regression')
 # regress(linear_model.Ridge(), 'Ridge Regression')
-# regress(linear_model.Lasso(alpha = 0.0001), 'Lasso Regression')
-# regress(linear_model.ElasticNet(alpha=.0006), 'Elastic Net Regression')
+# regress(linear_model.Lasso(), 'Lasso Regression')
+# regress(linear_model.ElasticNet(), 'Elastic Net Regression')
 # regress(DecisionTreeRegressor(max_depth=10), 'Decision Tree Regression')
 # regress(RandomForestRegressor(n_estimators = 100, max_depth = 5, warm_start = False), 'Random Forest Regression')
 # regress(KNeighborsRegressor(), "KNN Regressor")
@@ -92,3 +112,18 @@ regress(linear_model.LinearRegression(), 'Ordinary Least Squares Regression')
 # output covariance matrix heat map
 
 # PCA plots
+import numpy as numpy
+import matplotlib.pyplot as plt
+from sklearn import decomposition
+
+
+pca = decomposition.PCA(n_components=3)
+pca.fit(d)
+pca_d = pca.transform(d)
+e1 = pca_d[:,0]
+e2 = pca_d[:,1]
+plt.plot(e1, e2)
+plot.show()
+
+
+
