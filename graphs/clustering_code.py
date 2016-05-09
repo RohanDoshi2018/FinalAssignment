@@ -201,5 +201,41 @@ ax_priv.annotate(x_pca_reduced_pd.index.values[1033], xy=(x_pca_reduced_pd.ix[10
 ax_priv.annotate(x_pca_reduced_pd.index.values[560], xy=(x_pca_reduced_pd.ix[560,'e1'],x_pca_reduced_pd.ix[560,'e2']), 
             xytext=(-9.5,3), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
 
+plt.show()
+
+## TRADE
+
+clusters = KMeans().fit_predict(x) #n_clusters=5
+fig = plt.figure()
+ax_trade = fig.add_subplot(111)
+ax_trade.scatter(x_pca_reduced_pd.ix[:, 0], x_pca_reduced_pd.ix[:, 1], c=clusters, s=30)
+
+# Mass MA
+ax_trade.annotate(x_pca_reduced_pd.index.values[525], xy=(x_pca_reduced_pd.ix[525,'e1'],x_pca_reduced_pd.ix[525,'e2']), 
+            xytext=(-6.5,9.2), color='purple', arrowprops=dict(facecolor='red', shrink=0.05))
+
+# CMA
+ax_trade.annotate(x_pca_reduced_pd.index.values[83], xy=(x_pca_reduced_pd.ix[83,'e1'], x_pca_reduced_pd.ix[83,'e2']), 
+            xytext=(-1,10), color='purple', arrowprops=dict(facecolor='red', shrink=0.05))
+
+# Maine MA
+ax_trade.annotate(x_pca_reduced_pd.index.values[460], xy=(x_pca_reduced_pd.ix[460,'e1'], x_pca_reduced_pd.ix[460,'e2']), 
+            xytext=(-9.5,6), color='purple', arrowprops=dict(facecolor='red', shrink=0.05))
+
+# SUNY MC
+ax_trade.annotate(x_pca_reduced_pd.index.values[854], xy=(x_pca_reduced_pd.ix[854,'e1'],x_pca_reduced_pd.ix[854,'e2']), 
+            xytext=(-8,8), color='purple', arrowprops=dict(facecolor='red', shrink=0.05))
+
+# Calvary Bible
+ax_trade.annotate('Calvary Bible College', xy=(x_pca_reduced_pd.ix[634,'e1'],x_pca_reduced_pd.ix[634,'e2']), 
+            xytext=(-9.5,0), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Grace 
+ax_trade.annotate('Grace Theological Seminary', xy=(x_pca_reduced_pd.ix[336,'e1'],x_pca_reduced_pd.ix[336,'e2']), 
+            xytext=(-3,-3.3), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Faith
+ax_trade.annotate('Faith Baptist Bible College', xy=(x_pca_reduced_pd.ix[374,'e1'],x_pca_reduced_pd.ix[374,'e2']), 
+            xytext=(-9.5,2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
 
 plt.show()
