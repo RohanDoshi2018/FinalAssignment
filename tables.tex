@@ -158,6 +158,7 @@
 \begin{homeworkProblem}
 \begin{center}
 
+\boxed{\text{Overview of Regression}} \\
 % overview of regressions
 \begin{tabular}{c c c}
 	\textbf{Regression Type} & $r^2$ & \textbf{RMSE} \\
@@ -173,6 +174,7 @@
 
 %%%% ORDINARY LEAST SQUARES %%%%
 % negative residuals
+Ordinary Least Squares (NEG)
 \begin{tabular}{c c c}
 	\textbf{Rank} & \textbf{Institution Name} & \textbf{Residual} \\ 
 	\hline
@@ -188,6 +190,7 @@
 	10 & Oklahoma City University & -7364.77 
 \end{tabular}
 % positive residuals
+Ordinary Least Squares (POS)
 \begin{tabular}{c c c}
 \textbf{Rank} & \textbf{Institution Name} & \textbf{Residual} \\ 
 	\hline
@@ -204,6 +207,7 @@
 \end{tabular}
 
 %%%%DECISION TREES%%%%
+Decision Trees (NEG)
 % negative residuals
 \begin{tabular}{c c c}
 \textbf{Rank} & \textbf{Institution Name} & \textbf{Residual} \\ 
@@ -221,6 +225,7 @@
 \end{tabular}
 
 % positive residuals
+Decision Trees (POS)
 \begin{tabular}{c c c}
 \textbf{Rank} & \textbf{Institution Name} & \textbf{Residual} \\ 
 	\hline
@@ -238,6 +243,7 @@
 
 %%%%KNN%%%%
 % negative residuals
+KNN (NEG)
 \begin{tabular}{c c c}
 \textbf{Rank} & \textbf{Institution Name} & \textbf{Residual} \\ 
 	\hline
@@ -254,6 +260,7 @@
 \end{tabular}
 
 % positive residuals
+KNN(POS)
 \begin{tabular}{c c c}
 \textbf{Rank} & \textbf{Institution Name} & \textbf{Residual} \\ 
 	\hline
@@ -271,6 +278,7 @@
 
 %%%%Elastic Net%%%%
 % negative residuals
+Elastic Net (NEG)
 \begin{tabular}{c c c}
 \textbf{Rank} & \textbf{Institution Name} & \textbf{Residual} \\ 
 	\hline
@@ -287,6 +295,7 @@
 \end{tabular}
 
 % positive residuals
+Elastic Net (POS)
 \begin{tabular}{c c c}
 \textbf{Rank} & \textbf{Institution Name} & \textbf{Residual} \\ 
 	\hline
@@ -300,6 +309,24 @@
 	8 & Butler University & 10319.31 \\
 	9 & Fairfield University & 8142.88 \\
 	10 & CUNY Bernard M Baruch College &  7997.13
+\end{tabular}
+
+\boxed{\text{Feature Importance}} \\
+\begin{tabular}{c c c}
+\textbf{Variable} & \textbf{Meaning} & \textbf{Feature Importance Coefficient} \\ 
+	\hline
+	\texttt{UGDS\_AIAN} & Prop. of UGs with American Indian Heritage & 3.66 $\cdot \text{ }10^9$ \\
+	\texttt{UGDS\_ASIAN} & Prop. of UGs with Asian Heritage & 3.60 $\cdot \text{ }10^9$  \\ 
+	\texttt{UGDS\_2MOR} & Prop. of UGs with Mixed Heritage & 3.52 $\cdot \text{ }10^9$ \\
+	\texttt{UGDS\_BLACK} & Prop. of UGs with Black Heritage & 3.49 $\cdot \text{ }10^9$ \\
+	\texttt{UGDS\_UNKN} & Prop. of UGs with Unknown Heritage  & 3.47 $\cdot \text{ }10^9$ \\
+	\texttt{UGDS\_NHPI} & Prop. of UGs with Pacific Islander Heritage & 3.47 $\cdot \text{ }10^9$ \\
+	\texttt{UGDS\_HISP} & Prop. of UGs with Hispanic Heritage & 3.42 $\cdot \text{ }10^9$ \\
+	\texttt{UGDS\_NRA} & Prop. of UGs who are Non\-Resident Aliens & 3.41 $\cdot \text{ }10^9$ \\
+	\texttt{UGDS\_WHITE} & Prop. of UGs with Caucasian Heritage & 3.39 $\cdot \text{ }10^9$ \\
+	\texttt{PCIP29} & \% of Degrees in Military Tech/Applied Sciences &  1.22 $\cdot \text{ }10^9$ \\
+	\texttt{NOPELL\_ENRL\_ORIG\_YR6\_RT} & \% without Pell Still Enrolled After 6 Years & 8.08 $\cdot \text{ }10^8$ \\
+	\texttt{PCIP41} & \% of Degrees in Science Technologies & 5.37 $\cdot \text{ }10^8$ 
 \end{tabular}
 
 
