@@ -38,6 +38,8 @@ pca.fit(x)
 x_pca_reduced = pca.fit_transform(x)
 x_pca_reduced_pd = pd.DataFrame(data=x_pca_reduced, index=list_schools, columns=['e1', 'e2'])  # 1st row as the column names
 
+## TECH
+
 clusters = KMeans().fit_predict(x) #n_clusters=5
 fig = plt.figure()
 ax_tech = fig.add_subplot(111)
@@ -74,5 +76,42 @@ ax_tech.annotate(x_pca_reduced_pd.index.values[574], xy=(x_pca_reduced_pd.ix[574
 # NJIT
 ax_tech.annotate('NJIT', xy=(x_pca_reduced_pd.ix[725,'e1'],x_pca_reduced_pd.ix[725,'e2']), 
             xytext=(-8,.75), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+plt.show()
+
+## MUSIC
+
+clusters = KMeans().fit_predict(x) #n_clusters=5
+fig = plt.figure()
+ax_music = fig.add_subplot(111)
+ax_music.scatter(x_pca_reduced_pd.ix[:, 0], x_pca_reduced_pd.ix[:, 1], c=clusters, s=30)
+
+# McNally
+ax_music.annotate(x_pca_reduced_pd.index.values[1431], xy=(x_pca_reduced_pd.ix[1431,'e1'],x_pca_reduced_pd.ix[1431,'e2']), 
+            xytext=(-1.5,-3.2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# MSM
+ax_music.annotate(x_pca_reduced_pd.index.values[796], xy=(x_pca_reduced_pd.ix[796,'e1'], x_pca_reduced_pd.ix[796,'e2']), 
+            xytext=(-1,-2.3), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# NEC
+ax_music.annotate(x_pca_reduced_pd.index.values[530], xy=(x_pca_reduced_pd.ix[530,'e1'], x_pca_reduced_pd.ix[530,'e2']), 
+            xytext=(-4,10), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Juilliard
+ax_music.annotate(x_pca_reduced_pd.index.values[787], xy=(x_pca_reduced_pd.ix[787,'e1'],x_pca_reduced_pd.ix[787,'e2']), 
+            xytext=(-9.5,8), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Oberlin
+ax_music.annotate(x_pca_reduced_pd.index.values[951], xy=(x_pca_reduced_pd.ix[951,'e1'],x_pca_reduced_pd.ix[951,'e2']), 
+            xytext=(-9,-3), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Rochester (Eastman)
+ax_music.annotate(x_pca_reduced_pd.index.values[820], xy=(x_pca_reduced_pd.ix[820,'e1'],x_pca_reduced_pd.ix[820,'e2']), 
+            xytext=(-9.2,2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Bard
+ax_music.annotate(x_pca_reduced_pd.index.values[752], xy=(x_pca_reduced_pd.ix[752,'e1'],x_pca_reduced_pd.ix[752,'e2']), 
+            xytext=(-9,0), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
 
 plt.show()
