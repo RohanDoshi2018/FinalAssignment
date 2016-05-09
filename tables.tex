@@ -1,0 +1,233 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pgfplots}
+\usepackage{units}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+%\cfoot{\thepage}
+
+%\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle}
+
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}} % diagonal fraction bar
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{homeworkProblemCounter}{#1}
+    \fi
+    \section{Problem \arabic{homeworkProblemCounter}}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{homeworkProblemCounter}
+}{
+    \exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Problem Set \#9}
+\newcommand{\hmwkDueDate}{April 26, 2016}
+\newcommand{\hmwkClass}{ECO 310}
+\newcommand{\hmwkClassTime}{}
+\newcommand{\hmwkClassInstructor}{Professor Morris}
+\newcommand{\hmwkAuthorName}{Kevin Liu}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small{Due:\ \hmwkDueDate\ }\\
+    \vspace{3in}
+}
+%     \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Make floor and ceiling functions prettier
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\begin{homeworkProblem}
+\begin{center}
+\begin{tabular}{c c c}
+	\textbf{Regression Type} & $r^2$ & \textbf{RMSE} \\
+	\hline
+	Ordinary Least Squares & 0.76 & 4005.25 \\
+	K Nearest Neighbors & 0.42 & 6251.03 \\
+	Ridge & 0.61 & 5087.40 \\
+	Lasso & 0.67 & 4716.40 \\
+	Elastic Net & 0.37 & 6514.98 \\
+	Decision Tree & 0.04 & 8042.44 \\
+	Random Forest & 0.35 & 6628.65
+\end{tabular}
+
+\begin{tabular}{c c c}
+	\textbf{Rank} & \textbf{Institution Name} & \textbf{Residual} \\ 
+	\hline
+	1 & Rutgers University-Newark & -12387.28\\
+	2 & Pennsylvania State University-Penn State Lehigh & -11728.43 \\ 
+	3 & Pennsylvania State University-Penn State York &  -11050.88\\
+	4 & Rutgers University-Camden & -9411.65 \\
+	5 & Swedish Institute a College of Health Sciences & -8643.17\\
+	6 & Florida National University-Main Campus & -8355.56 \\
+	7 & Baker College of Flint & -8024.05 \\
+	8 & SUNY at Purchase College & -7550.39 \\
+	9 & South University-The Art Institute of Dallas & -7488.18 \\
+	10 & Oklahoma City University & -7364.77 
+\end{tabular}
+
+\begin{tabular}{c c c}
+\textbf{Rank} & \textbf{Institution Name} & \textbf{Residual} \\ 
+	\hline
+	1 & Westwood College-Los Angeles & 12259.81 \\
+	2 & Fairfield University & 11905.85 \\ 
+	3 & Savannah State University &  11050.12\\
+	4 & Prescott College & 8524.98 \\
+	5 & Auburn University & 6719.69\\
+	6 & Pacific Oaks College & 6449.84 \\
+	7 & Rose-Hulman Institute of Technology & 6331.67 \\
+	8 & Silver Lake College of the Holy Family & 5702.42 \\
+	9 & Daemen College & 4529.33 \\
+	10 & University of Colorado Boulder & 4446.70
+\end{tabular}
+
+
+\end{center}
+
+ 
+\end{homeworkProblem}
+\pagebreak
+
+%\pagebreak
+
+%
+% Non sequential homework problems
+%
+
+% Jump to problem 18
+%\begin{homeworkProblem}[18]
+%    Evaluate \(\sum_{k=1}^{5} k^2\) and \(\sum_{k=1}^{5} (k - 1)^2\).
+%\end{homeworkProblem}
+%
+%% Continue counting to 19
+%\begin{homeworkProblem}
+%    Find the derivative of \(f(x) = x^4 + 3x^2 - 2\)
+%\end{homeworkProblem}
+%
+%% Go back to where we left off
+%\begin{homeworkProblem}[6]
+%    Evaluate the integrals
+%    \(\int_0^1 (1 - x^2) \dx\)
+%    and
+%    \(\int_1^{\infty} \frac{1}{x^2} \dx\).
+%\end{homeworkProblem}
+
+\end{document}
