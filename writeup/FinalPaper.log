@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 MAY 2016 18:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 MAY 2016 22:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -307,30 +307,40 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
  [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2]
+]
 Underfull \hbox (badness 1635) in paragraph at lines 101--102
 []\OT1/ptm/m/n/10 Kaggle. US Dept of Ed-u-ca-tion: Col-lege Score-board. \OT1/p
 cr/m/n/10 https://www.kaggle.com/
  []
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
-[3]
+[2]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
  (./FinalPaper.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
-Package rerunfilecheck Info: File `FinalPaper.out' has not changed.
-(rerunfilecheck)             Checksum: 110930C83E6D76C0A8A2775E419A975E;855.
+
+
+Package rerunfilecheck Warning: File `FinalPaper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `FinalPaper.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  110930C83E6D76C0A8A2775E419A975E;855.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 5788 strings out of 493089
- 84866 string characters out of 6134842
- 177294 words of memory out of 5000000
- 9203 multiletter control sequences out of 15000+600000
- 14964 words of font info for 30 fonts, out of 8000000 for 9000
+ 5766 strings out of 493089
+ 84627 string characters out of 6134842
+ 175240 words of memory out of 5000000
+ 9189 multiletter control sequences out of 15000+600000
+ 13280 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,11n,39p,1582b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,39p,1583b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texli
@@ -338,12 +348,11 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/t
-imes/utmri8a.pfb>
-Output written on FinalPaper.pdf (3 pages, 88798 bytes).
+ype1/urw/times/utmr8a.pfb>
+Output written on FinalPaper.pdf (2 pages, 72177 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
- 23 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
