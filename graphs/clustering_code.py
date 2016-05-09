@@ -153,3 +153,53 @@ ax_la.annotate(x_pca_reduced_pd.index.values[705], xy=(x_pca_reduced_pd.ix[705,'
 
 
 plt.show()
+
+## PRIVATE
+
+clusters = KMeans().fit_predict(x) #n_clusters=5
+fig = plt.figure()
+ax_priv = fig.add_subplot(111)
+ax_priv.scatter(x_pca_reduced_pd.ix[:, 0], x_pca_reduced_pd.ix[:, 1], c=clusters, s=30)
+
+# Princeton
+ax_priv.annotate(x_pca_reduced_pd.index.values[726], xy=(x_pca_reduced_pd.ix[726,'e1'],x_pca_reduced_pd.ix[726,'e2']), 
+            xytext=(0.75,-2.2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Scripps
+ax_priv.annotate(x_pca_reduced_pd.index.values[132], xy=(x_pca_reduced_pd.ix[132,'e1'], x_pca_reduced_pd.ix[132,'e2']), 
+            xytext=(2,-1), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Franklin Pierce
+ax_priv.annotate('Franlin Pierce', xy=(x_pca_reduced_pd.ix[703,'e1'], x_pca_reduced_pd.ix[703,'e2']), 
+            xytext=(-9.5,0), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Grand Canyon
+ax_priv.annotate(x_pca_reduced_pd.index.values[28], xy=(x_pca_reduced_pd.ix[28,'e1'],x_pca_reduced_pd.ix[28,'e2']), 
+            xytext=(-4,7), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Post
+ax_priv.annotate(x_pca_reduced_pd.index.values[171], xy=(x_pca_reduced_pd.ix[171,'e1'],x_pca_reduced_pd.ix[171,'e2']), 
+            xytext=(-9.5,8), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Universidad Del Este
+ax_priv.annotate(x_pca_reduced_pd.index.values[1400], xy=(x_pca_reduced_pd.ix[1400,'e1'],x_pca_reduced_pd.ix[1400,'e2']), 
+            xytext=(-2,-3.5), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Bucknell University
+ax_priv.annotate(x_pca_reduced_pd.index.values[1021], xy=(x_pca_reduced_pd.ix[1021,'e1'],x_pca_reduced_pd.ix[1021,'e2']), 
+            xytext=(-9.5,2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Occidental
+ax_priv.annotate(x_pca_reduced_pd.index.values[112], xy=(x_pca_reduced_pd.ix[112,'e1'],x_pca_reduced_pd.ix[112,'e2']), 
+            xytext=(2,8), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Drexel
+ax_priv.annotate(x_pca_reduced_pd.index.values[1033], xy=(x_pca_reduced_pd.ix[1033,'e1'],x_pca_reduced_pd.ix[1033,'e2']), 
+            xytext=(-9,-2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Davenport
+ax_priv.annotate(x_pca_reduced_pd.index.values[560], xy=(x_pca_reduced_pd.ix[560,'e1'],x_pca_reduced_pd.ix[560,'e2']), 
+            xytext=(-9.5,3), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+
+plt.show()
