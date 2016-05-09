@@ -115,3 +115,41 @@ ax_music.annotate(x_pca_reduced_pd.index.values[752], xy=(x_pca_reduced_pd.ix[75
             xytext=(-9,0), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
 
 plt.show()
+
+## LIBERAL ARTS
+
+clusters = KMeans().fit_predict(x) #n_clusters=5
+fig = plt.figure()
+ax_la = fig.add_subplot(111)
+ax_la.scatter(x_pca_reduced_pd.ix[:, 0], x_pca_reduced_pd.ix[:, 1], c=clusters, s=30)
+
+# Williams
+ax_la.annotate(x_pca_reduced_pd.index.values[549], xy=(x_pca_reduced_pd.ix[549,'e1'],x_pca_reduced_pd.ix[549,'e2']), 
+            xytext=(2,-2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Middlebury
+ax_la.annotate(x_pca_reduced_pd.index.values[1271], xy=(x_pca_reduced_pd.ix[1271,'e1'], x_pca_reduced_pd.ix[1271,'e2']), 
+            xytext=(0,-3.5), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Bard
+ax_la.annotate(x_pca_reduced_pd.index.values[752], xy=(x_pca_reduced_pd.ix[752,'e1'], x_pca_reduced_pd.ix[752,'e2']), 
+            xytext=(-9.5,0), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Claremont McKenna
+ax_la.annotate(x_pca_reduced_pd.index.values[89], xy=(x_pca_reduced_pd.ix[89,'e1'],x_pca_reduced_pd.ix[89,'e2']), 
+            xytext=(-4,10), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Wesley
+ax_la.annotate(x_pca_reduced_pd.index.values[184], xy=(x_pca_reduced_pd.ix[184,'e1'],x_pca_reduced_pd.ix[184,'e2']), 
+            xytext=(-9.5,8), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Rhodes
+ax_la.annotate(x_pca_reduced_pd.index.values[1169], xy=(x_pca_reduced_pd.ix[1169,'e1'],x_pca_reduced_pd.ix[1169,'e2']), 
+            xytext=(-9,-3), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Southern New Hampshire
+ax_la.annotate(x_pca_reduced_pd.index.values[705], xy=(x_pca_reduced_pd.ix[705,'e1'],x_pca_reduced_pd.ix[705,'e2']), 
+            xytext=(-9.5,2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+
+plt.show()
