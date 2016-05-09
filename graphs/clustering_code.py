@@ -239,3 +239,48 @@ ax_trade.annotate('Faith Baptist Bible College', xy=(x_pca_reduced_pd.ix[374,'e1
             xytext=(-9.5,2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
 
 plt.show()
+
+## PUBLIC
+
+clusters = KMeans().fit_predict(x) #n_clusters=5
+fig = plt.figure()
+ax_pub = fig.add_subplot(111)
+ax_pub.scatter(x_pca_reduced_pd.ix[:, 0], x_pca_reduced_pd.ix[:, 1], c=clusters, s=30)
+
+# Berkeley
+ax_pub.annotate('UC Berkeley', xy=(x_pca_reduced_pd.ix[73,'e1'],x_pca_reduced_pd.ix[73,'e2']), 
+            xytext=(2.8,-2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# UCLA
+ax_pub.annotate('UCLA', xy=(x_pca_reduced_pd.ix[76,'e1'], x_pca_reduced_pd.ix[76,'e2']), 
+            xytext=(3.5,-1), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Virginia Tech
+ax_pub.annotate('Virginia Tech', xy=(x_pca_reduced_pd.ix[1300,'e1'], x_pca_reduced_pd.ix[1300,'e2']), 
+            xytext=(-9.5,0), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Alabama at Birmingham
+ax_pub.annotate(x_pca_reduced_pd.index.values[1], xy=(x_pca_reduced_pd.ix[1,'e1'],x_pca_reduced_pd.ix[1,'e2']), 
+            xytext=(-4,10), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# UMich
+ax_pub.annotate(x_pca_reduced_pd.index.values[572], xy=(x_pca_reduced_pd.ix[572,'e1'],x_pca_reduced_pd.ix[572,'e2']), 
+            xytext=(-9.5,8), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# UNC Chapel Hill
+ax_pub.annotate('UNC', xy=(x_pca_reduced_pd.ix[887,'e1'],x_pca_reduced_pd.ix[887,'e2']), 
+            xytext=(-9,-3), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# William and Mary
+ax_pub.annotate(x_pca_reduced_pd.index.values[1277], xy=(x_pca_reduced_pd.ix[1277,'e1'],x_pca_reduced_pd.ix[1277,'e2']), 
+            xytext=(-3,-3.2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# UW-Mad
+ax_pub.annotate(x_pca_reduced_pd.index.values[1367], xy=(x_pca_reduced_pd.ix[1367,'e1'],x_pca_reduced_pd.ix[1367,'e2']), 
+            xytext=(-9.5,2), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+# Georgeia Southwestern
+ax_pub.annotate('Georgeia Southwestern', xy=(x_pca_reduced_pd.ix[248,'e1'],x_pca_reduced_pd.ix[248,'e2']), 
+            xytext=(-9.5,6), color='purple', arrowprops=dict(facecolor='yellow', shrink=0.05))
+
+plt.show()
