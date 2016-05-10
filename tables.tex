@@ -163,13 +163,13 @@
 \begin{tabular}{c c c}
 	\textbf{Regression Type} & $r^2$ & \textbf{RMSE} \\
 	\hline
-	Ordinary Least Squares & 0.76 & 4005.25 \\
-	K Nearest Neighbors & 0.42 & 6251.03 \\
-	Ridge & 0.61 & 5087.40 \\
-	Lasso & 0.67 & 4716.40 \\
-	Elastic Net & 0.37 & 6514.98 \\
-	Decision Tree & 0.04 & 8042.44 \\
-	Random Forest & 0.35 & 6628.65
+	Elastic Net & 0.815 & 4600 \\
+	Lasso & 0.815 & 4600 \\
+	Ridge & 0.810 & 4663 \\
+	Ordinary Least Squares & 0.801 & 4773 \\
+	Random Forest & 0.760 & 5234 \\
+	K Nearest Neighbors & 0.731 & 5564 \\
+	Decision Tree & 0.386 & 8375 \\
 \end{tabular}
 
 %%%% ORDINARY LEAST SQUARES %%%%
@@ -313,24 +313,40 @@ Elastic Net (POS)
 
 \boxed{\text{Feature Importance}} \\
 \begin{tabular}{c c c}
-\textbf{Variable} & \textbf{Meaning} & \textbf{Feature Importance Coefficient} \\ 
+\textbf{Variable} & \textbf{Meaning} & \textbf{Positive Coefficients} \\ 
 	\hline
-	\texttt{UGDS\_AIAN} & Prop. of UGs with American Indian Heritage & 3.66 $\cdot \text{ }10^9$ \\
-	\texttt{UGDS\_ASIAN} & Prop. of UGs with Asian Heritage & 3.60 $\cdot \text{ }10^9$  \\ 
-	\texttt{UGDS\_2MOR} & Prop. of UGs with Mixed Heritage & 3.52 $\cdot \text{ }10^9$ \\
-	\texttt{UGDS\_BLACK} & Prop. of UGs with Black Heritage & 3.49 $\cdot \text{ }10^9$ \\
-	\texttt{UGDS\_UNKN} & Prop. of UGs with Unknown Heritage  & 3.47 $\cdot \text{ }10^9$ \\
-	\texttt{UGDS\_NHPI} & Prop. of UGs with Pacific Islander Heritage & 3.47 $\cdot \text{ }10^9$ \\
-	\texttt{UGDS\_HISP} & Prop. of UGs with Hispanic Heritage & 3.42 $\cdot \text{ }10^9$ \\
-	\texttt{UGDS\_NRA} & Prop. of UGs who are Non\-Resident Aliens & 3.41 $\cdot \text{ }10^9$ \\
-	\texttt{UGDS\_WHITE} & Prop. of UGs with Caucasian Heritage & 3.39 $\cdot \text{ }10^9$ \\
-	\texttt{PCIP29} & \% of Degrees in Military Tech/Applied Sciences &  1.22 $\cdot \text{ }10^9$ \\
-	\texttt{NOPELL\_ENRL\_ORIG\_YR6\_RT} & \% without Pell Still Enrolled After 6 Years & 8.08 $\cdot \text{ }10^8$ \\
-	\texttt{PCIP41} & \% of Degrees in Science Technologies & 5.37 $\cdot \text{ }10^8$ 
-\end{tabular}
+	\texttt{pct\_black} & \% of pop. from students' zip codes that is Black & $576637.44$ \\
+	\texttt{SATMT25} & 25th percentile of SAT scores at the institution (math) & $370664.54$  \\ 
+	\texttt{poverty\_rate} & Poverty rate, via Census data & $329344.49$ \\
+	\texttt{SAT\_AVG\_ALL} & Average SAT score of students admitted for all campuses & $261633.53$ \\
+	\texttt{SATMTMID} & Midpoint of SAT scores at the institution (math) & $	159806.83$ \\
+	\end{tabular}
+	
+\begin{tabular}{c c c}
+\textbf{Variable} & \textbf{Meaning} & \textbf{Negative Coefficients} \\ 
+	\hline
+	\texttt{GRAD\_DEBT\_MDN10YR} & Median loan debt of completers in monthly payments & $-980270.30$ \\
+	\texttt{PCTPELL} & \% of undergraduates who receive a Pell Grant & $-922749.87$  \\ 
+	\texttt{pct\_white} & \% of pop. from students' zip codes that is White & $-592918.42$ \\
+	\texttt{pct\_born\_us} & \% of the pop. from students' zip codes that was born in US & $-554285.29$ \\
+	\texttt{SAT\_AVG} & Average SAT equivalent score of students admitted & $-343526.60$ \\
+	\end{tabular}
 
+\begin{tabular}{c c c}
+\textbf{Variable} & \textbf{Meaning} & \textbf{Magnitude of Coefficients} \\ 
+	\hline
+	\texttt{GRAD\_DEBT\_MDN10YR} & Median loan debt of completers in monthly payments & $980270.30$ \\
+	\texttt{PCTPELL} & \% of undergraduates who receive a Pell Grant & $922749.87$  \\ 
+	\texttt{pct\_white} & \% of pop. from students' zip codes that is White & $592918.42$ \\
+	\texttt{pct\_black} & \% of pop. from students' zip codes that is Black & $576637.44$ \\
+	\texttt{pct\_born\_us} & \% of the pop. from students' zip codes that was born in US & $554285.29$ \\
+	\texttt{SATMT25} & 25th percentile of SAT scores at the institution (math) & $370664.54$  \\ 
+	\texttt{SAT\_AVG} & Average SAT equivalent score of students admitted & $343526.60$ \\
+	\texttt{poverty\_rate} & Poverty rate, via Census data & $329344.49$ \\
+	\texttt{SAT\_AVG\_ALL} & Average SAT score of students admitted for all campuses & $261633.53$ \\
+	\texttt{SATMTMID} & Midpoint of SAT scores at the institution (math) & $	159806.83$ \\
+	\end{tabular}
 \end{center}
-
  
 \end{homeworkProblem}
 \pagebreak

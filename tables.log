@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 MAY 2016 06:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 MAY 2016 23:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -773,7 +773,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 
-Overfull \hbox (47.57872pt too wide) in paragraph at lines 315--331
+Overfull \hbox (21.06941pt too wide) in paragraph at lines 325--334
+ [][] 
+ []
+
+
+Overfull \hbox (44.229pt too wide) in paragraph at lines 335--349
  [][] 
  []
 
@@ -781,7 +786,7 @@ Overfull \hbox (47.57872pt too wide) in paragraph at lines 315--331
 Here is how much of TeX's memory you used:
  23076 strings out of 493089
  581238 string characters out of 6134842
- 737466 words of memory out of 5000000
+ 737467 words of memory out of 5000000
  26129 multiletter control sequences out of 15000+600000
  12277 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -795,7 +800,7 @@ cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
 10.pfb>
-Output written on tables.pdf (4 pages, 100919 bytes).
+Output written on tables.pdf (4 pages, 103923 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream
